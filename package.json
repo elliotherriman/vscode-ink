@@ -42,7 +42,7 @@
                 "ink.useLanguageServer": {
                     "scope": "resource",
                     "type": "boolean",
-                    "default": false,
+                    "default": true,
                     "description": "Use the experimental language server (this feature requires a version of inklecate with LSP support)."
                 },
                 "ink.languageServer.mainFilePath": {
@@ -54,15 +54,19 @@
                 "ink.languageServer.inklecatePath": {
                     "scope": "resource",
                     "type": "string",
-                    "default": "inklecate",
-                    "description": "Path to the inklecate executable."
+                    "default": "",
+                    "description": "Path to the inklecate executable. If unset, it will default to a bundled version of inklecate, based on your platform."
                 },
                 "ink.languageServer.useSpecificRuntime": {
                     "scope": "resource",
                     "type": "string",
                     "default": "none",
                     "description": "You can run inklecate with a specific runtime. Make sure they are available on your system before selecting them.",
-                    "enum": ["none", "mono", "dotnet"],
+                    "enum": [
+                        "none",
+                        "mono",
+                        "dotnet"
+                    ],
                     "enumDescriptions": [
                         "Don't use a specific runtime (Windows only)",
                         "Mono (mono)",
