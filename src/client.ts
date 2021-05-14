@@ -6,6 +6,8 @@ import {
     Executable
 } from 'vscode-languageclient';
 
+import { platform } from "os";
+
 let client: LanguageClient | undefined;
 
 export function activate(context: ExtensionContext) {
@@ -19,7 +21,27 @@ export function activate(context: ExtensionContext) {
         return;
     }
 
-    const inklecatePath: string = configuration.get('languageServer.inklecatePath', 'inklecate');
+
+	let inklecatePath: string = configuration.get('languageServer.inklecatePath', 'inklecate');
+
+	if (inklecatePath.trim() === "")
+	{
+		switch (platform())
+		{
+			case "win32": 
+				inklecatePath = "inklecate/inklecate_win.exe"
+				break;
+			case "darwin":
+				inklecatePath = "inklecate/inklecate_mac"
+				break;
+			default:
+				inklecatePath = "inklecate/inklecate_linux"
+		}
+	}
+
+	inklecatePath = context.asAbsolutePath(inklecatePath);
+
+
     const useSpecificRuntime: string = configuration.get('languageServer.useSpecificRuntime', 'none');
 
     let run: Executable;
