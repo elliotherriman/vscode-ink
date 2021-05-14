@@ -12,10 +12,9 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Frédéric Maquin",
-        "email": "fred@ephread.com"
+        "name": "Elliot Herriman"
     },
-    "publisher": "ephread",
+    "publisher": "calico",
     "contributes": {
         "grammars": [
             {
