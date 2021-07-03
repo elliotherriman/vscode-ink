@@ -2,7 +2,7 @@
 
 This extensions adds language support for inkle's ink to Visual Studio Code.
 
-⚠️ The extension is under heavy development and is not available yet on the marketplace.
+⚠️ The extension is under heavy development and is not available yet on the marketplace. It doesn't currently have any way of detecting if the current ink file is meant to be imported, leading to false positive errors for variables defined in other files.
 
 ## Language Features
 
@@ -28,11 +28,9 @@ This extensions adds language support for inkle's ink to Visual Studio Code.
    
 ## Configuration settings
 
-The server supports four configuration settings.
+The server supports these configuration settings.
 
 - `ink.useLanguageServer`: use the experimental language server.
-- `ink.languageServer.mainFilePath`: the path to the main ink file, used by inklecate to build the story.
-   If it's not provided, the extension will treat the current file in isolation.
 - `ink.languageServer.inklecatePath`: the path to the inklecate. If inklecate is accessible in `$PATH`, you can set it to `inklecate`. If unset, it will choose a bundled version of inklecate, specific to your platform.
 - `ink.languageServer.useSpecificRuntime`: whether to use a .NET runtime to execute `inklecate`; possible values are:
     - `none`: use no specific runtime (only available on Windows);
