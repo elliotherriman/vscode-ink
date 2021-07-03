@@ -6,8 +6,8 @@ This extensions adds language support for inkle's ink to Visual Studio Code.
 
 ## Language Features
 
-- Syntax highlighting using the [updated TextMate grammar].
-- Diagnostics (errors, warning and author's notes) through inklecate.
+- Syntax highlighting.
+- Errors and warnings through inklecate.
 
 ## Installing
 
